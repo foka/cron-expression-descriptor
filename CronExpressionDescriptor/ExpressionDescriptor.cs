@@ -168,6 +168,7 @@ namespace CronExpressionDescriptor
             }
             else if (minuteExpression.Contains("-")
                 && !minuteExpression.Contains(",")
+                && !minuteExpression.Contains("/")
                 && hourExpression.IndexOfAny(m_specialCharacters) == -1)
             {
                 //minute range in single hour (i.e. 0-10 11)

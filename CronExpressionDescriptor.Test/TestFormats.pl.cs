@@ -401,5 +401,11 @@ namespace CronExpressionDescriptor.Test
             // GitHub Issue #44: https://github.com/bradyholt/cron-expression-descriptor/issues/44
             Assert.AreEqual("O 10:00, tylko od poniedziałek do czwartek i niedziela", ExpressionDescriptor.GetDescription("0 00 10 ? * MON-THU,SUN *"));
         }
-}
+
+        [Test]
+        public void TestHoursAndSecondsInternalWithStepValue()
+        {
+            Assert.AreEqual("Co 2 sekund, sekundy od 00 do 59, co 02 minut, minuty od 00 do 59, o 00:00", ExpressionDescriptor.GetDescription("0-59/2 0-59/2 0 ? * *"));
+        }
+    }
 }
